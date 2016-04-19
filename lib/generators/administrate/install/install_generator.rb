@@ -31,7 +31,7 @@ module Administrate
       private
 
       def singular_dashboard_resources
-        dashboard_resources.map(&:to_s).map(&:singularize)
+        dashboard_resources.map(&:to_s).reject(&:empty?).map(&:singularize)
       end
 
       def dashboard_resources
